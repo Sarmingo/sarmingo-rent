@@ -19,7 +19,7 @@ RegisterNetEvent('spawncar', function(data)
                 end
                 ESX.Game.SpawnVehicle(data.model, data.spawncoords, data.spawnheading, function(vehicle)
                     TaskWarpPedIntoVehicle(PlayerPedId(), vehicle, -1)
-                    TriggerServerEvent('rentacar', data.price, GetVehicleNumberPlateText(vehicle), GetDisplayNameFromVehicleModel(GetEntityModel(vehicle)))
+                    TriggerServerEvent('rentacar', data.price, GetVehicleNumberPlateText(vehicle), GetDisplayNameFromVehicleModel(GetEntityModel(vehicle)), data.account)
                 end)
                 DoScreenFadeIn(800)
             else
@@ -28,7 +28,7 @@ RegisterNetEvent('spawncar', function(data)
         else
             ESX.ShowNotification(Strings.donthavemoney)
         end
-    end, data.price)
+    end, data.price, data.account)
 end)
 
 function rent(k, data)
