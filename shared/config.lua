@@ -26,7 +26,7 @@ Config.Rent = {
                 event = 'spawncar',
                 arrow = true,
                 image = 'https://cdn.discordapp.com/attachments/954465466435403826/1127885708200263780/Futo-GTAVe-front.webp',
-                args = {model = 'futo', price = 250, spawncoords = vector3(433.68, 3480.04, 34.64), spawnheading = 289.08}
+                args = {model = 'futo', price = 250, spawncoords = vector3(433.68, 3480.04, 34.64), spawnheading = 289.08, account = 'money'}
             },
             {
                 title = 'Blista',
@@ -35,7 +35,7 @@ Config.Rent = {
                 event = 'spawncar',
                 arrow = true,
                 image = 'https://cdn.discordapp.com/attachments/954465466435403826/1127887154589212722/Blista-GTAV-front.webp',
-                args = {model = 'blista', price = 350, spawncoords = vector3(433.68, 3480.04, 34.64), spawnheading = 289.08}
+                args = {model = 'blista', price = 350, spawncoords = vector3(433.68, 3480.04, 34.64), spawnheading = 289.08, account = 'money'}
             }
         }
     },
