@@ -33,7 +33,7 @@ end)
 
 function rent(k, data)
     --BLIP
-    blip = AddBlipForCoord(data.pedcoords.x, data.pedcoords.y, data.pedcoords.z)
+    blip = AddBlipForCoord(vector3(data.pedcoords.x, data.pedcoords.y, data.pedcoords.z))
     SetBlipSprite(blip, data.sprite)
     SetBlipDisplay(blip, 4)
     SetBlipScale(blip, data.scale)
@@ -48,7 +48,7 @@ function rent(k, data)
     while not HasModelLoaded(GetHashKey(data.ped)) do
         Wait(1)
     end
-    RentPed = CreatePed(4, data.ped, vector3(data.pedcoords.x, data.pedcoords.y, data.pedcoords.z - 1), data.pedheading, false, true)
+    RentPed = CreatePed(4, data.ped, vector3(data.pedcoords.x, data.pedcoords.y, data.pedcoords.z - 1), data.pedcoords.w, false, true)
     FreezeEntityPosition(RentPed, true)
     SetEntityInvincible(RentPed, true)
     SetBlockingOfNonTemporaryEvents(RentPed, true)
@@ -57,7 +57,7 @@ function rent(k, data)
 
     exports.qtarget:AddBoxZone("rent-"..k, vector3(data.pedcoords.x, data.pedcoords.y, data.pedcoords.z - 1), 0.45, 0.35, {
         name="rent-"..k,
-        heading=data.pedheading,
+        heading=data.pedcoords.w,
         debugPoly=false,
         minZ=data.pedcoords.z - 1,
         maxZ=data.pedcoords.z + 2,
