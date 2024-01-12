@@ -17,7 +17,7 @@ RegisterNetEvent('spawncar', function(data)
                 while not IsScreenFadedOut() do
                     Wait(100)
                 end
-                ESX.Game.SpawnVehicle(data.model, data.spawncoords, data.spawnheading, function(vehicle)
+                ESX.Game.SpawnVehicle(data.model, vector3(data.spawncoords.x, data.spawncoords.y, data.spawncoords.z), data.spawncoords.w, function(vehicle)
                     TaskWarpPedIntoVehicle(PlayerPedId(), vehicle, -1)
                     TriggerServerEvent('rentacar', data.price, GetVehicleNumberPlateText(vehicle), GetDisplayNameFromVehicleModel(GetEntityModel(vehicle)), data.account)
                 end)
